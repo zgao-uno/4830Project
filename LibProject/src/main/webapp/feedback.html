@@ -1,12 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Library</title>
+<meta charset="UTF-8">
+<title>Giving Feedback</title>
 <link rel="stylesheet" href="style/layui/css/layui.css">
-<link rel="stylesheet" href="style/css/main.css">
+<link rel="stylesheet" href="style/css/feedback.css">
 </head>
 <body>
 <div class="layui-layout layui-layout-admin">
@@ -29,10 +27,19 @@
       		</li>
     	</ul>
 	</div>
-	<div class="container"><br><br><br>
-		<h1>Hi, Welcome to the online library</h1>
-	</div>
+	
+	<div class="container">
+		<div class="layui-form-item layui-form-text">
+    		<h2 class="header">Please Enter Your Feedback</h2><br>
+    		<textarea class="layui-textarea"></textarea><br>
+  		</div>
+		<div class="layui-form-item">
+        	<div class="layui-input-block">
+        		<button type="submit" class="layui-btn">Submit</button>         
+        	</div>
+        </div>
+	</div>>
+	
 </div>
-<script src="style/layui/layui.js"></script>
 </body>
 </html>

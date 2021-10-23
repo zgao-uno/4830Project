@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="style/css/register.css">
 </head>
 <body>
-<form class="layui-form" action="register" method="post">
+<form class="layui-form" action="Register" method="post">
 	<div class="container">
 		<div class="layui-form-item">
 			<h2 class="header">User Register</h2>

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="style/css/login.css">
 </head>
 <body>
-<form class="layui-form" action="login" method="post">
+<form class="layui-form" action="Login" method="post">
 	<div class="container">
 		<div class="layui-form-item">
 			<h2 class="header">User Login</h2>
@@ -34,5 +34,11 @@
         <a href="register.jsp" class="font-set">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No account? Register</a>
 	</div>
 </form>
+<script>
+	var error ='<%=request.getParameter("error")%>';
+	if(errori=='yes'){
+		alert("Login Failed, Please check your email or password!");
+	}
+</script>
 </body>
 </html>

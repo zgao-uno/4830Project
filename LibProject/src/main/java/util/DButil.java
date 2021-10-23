@@ -13,7 +13,7 @@ public class DButil {
 	
     static{
     	Properties properties = new Properties();
-    	InputStream inputStream = DButil.class.getResourceAsStream("/config.properties");
+    	InputStream inputStream = DButil.class.getResourceAsStream("/config-gao.properties");
     	
     	try {
     		properties.load(inputStream);

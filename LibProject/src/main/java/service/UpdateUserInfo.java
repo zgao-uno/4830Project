@@ -6,6 +6,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.UserDao;
+import model.User;
 
 
 @WebServlet("/UpdateUserInfo")
@@ -13,8 +17,17 @@ public class UpdateUserInfo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		User user=(User) session.getAttribute("user");
+		user.setFirstName(request.getParameter("firstName"));
+		user.setLastName(request.getParameter("lastName"));
+		user.setPhone(request.getParameter("phone"));
+		user.setAddress(request.getParameter("address"));
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		UserDao userDao = new UserDao();
+        userDao.updateInfo(user);
+        session.setAttribute("user", user);
+        request.getRequestDispatcher("updateInfo.jsp").forward(request,response);
 	}
 
 

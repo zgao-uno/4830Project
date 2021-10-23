@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Library</title>
+<title>Giving Feedback</title>
 <link rel="stylesheet" href="style/layui/css/layui.css">
-<link rel="stylesheet" href="style/css/main.css">
+<link rel="stylesheet" href="style/css/feedback.css">
 </head>
 <body>
 <%
@@ -37,9 +37,20 @@
       		</li>
     	</ul>
 	</div>
-	<div class="container"><br><br><br>
-		<h1>Hi&nbsp;<%=user.getFirstName() %>, Welcome to the online library</h1>
-	</div>
+	
+	<form class="layui-form" action="Feedback" method="post">
+		<div class="container">
+			<div class="layui-form-item layui-form-text">
+    			<h2 class="header">Please Enter Your Feedback</h2><br>
+    			<textarea class="layui-textarea" name="feedback"></textarea><br>
+  			</div>
+			<div class="layui-form-item">
+        		<div class="layui-input-block">
+        			<button type="submit" class="layui-btn">Submit</button>         
+        		</div>
+        	</div>
+		</div>
+	</form>
 </div>
 <script src="style/layui/layui.js"></script>
 </body>

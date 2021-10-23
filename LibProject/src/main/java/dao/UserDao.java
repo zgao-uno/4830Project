@@ -63,8 +63,6 @@ public class UserDao {
 	public void updateInfo(User user) {
 		Connection con = null;
 		PreparedStatement ps = null;
-		String email = user.getEmail();
-		String paswword = user.getPassword();
 		try {
 			con = DButil.getConn();
 			String sql = "update user set firstname=?, lastname=?, phone=?, address=? where email=? and password=?";
@@ -73,7 +71,8 @@ public class UserDao {
 			ps.setString(2,user.getLastName());
 			ps.setString(3,user.getPhone());
 			ps.setString(4,user.getAddress());
-			
+			ps.setString(5,user.getEmail());
+			ps.setString(6,user.getPassword());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

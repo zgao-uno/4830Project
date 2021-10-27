@@ -22,6 +22,7 @@
 	<div class="layui-header">
 		<div class="layui-logo layui-hide-xs layui-bg-black">Library</div>
 		<ul class="layui-nav layui-layout-left">
+			 <li class="layui-nav-item layui-hide-xs"><a href="main.jsp">Main Page</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="">Book Search</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="">Checkout History</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="feedback.jsp">Giving Feedback</a></li>

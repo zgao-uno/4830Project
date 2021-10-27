@@ -7,6 +7,12 @@
 <title>Login</title>
 <link rel="stylesheet" href="style/layui/css/layui.css">
 <link rel="stylesheet" href="style/css/login.css">
+<script>
+	var errori ='<%=request.getParameter("error")%>';
+	if(errori=='yes'){
+		alert("Login Failed, Please check your email or password!");
+	}
+</script>
 </head>
 <body>
 <form class="layui-form" action="Login" method="post">
@@ -34,11 +40,5 @@
         <a href="register.jsp" class="font-set">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No account? Register</a>
 	</div>
 </form>
-<script>
-	var error ='<%=request.getParameter("error")%>';
-	if(errori=='yes'){
-		alert("Login Failed, Please check your email or password!");
-	}
-</script>
 </body>
 </html>

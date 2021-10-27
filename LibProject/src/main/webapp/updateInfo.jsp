@@ -15,11 +15,12 @@
 	if(user == null)
 	{
 		response.sendRedirect("Login.jsp");
+		return;
 	}
 %>
 <div class="layui-layout layui-layout-admin">
 	<div class="layui-header">
-		<div class="layui-logo layui-hide-xs layui-bg-black">Library</div>
+		<div class="layui-logo layui-hide-xs layui-bg-black"><a href="main.jsp">Library</a></div>
 		<ul class="layui-nav layui-layout-left">
 			 <li class="layui-nav-item layui-hide-xs"><a href="">Book Search</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="">Checkout History</a></li>

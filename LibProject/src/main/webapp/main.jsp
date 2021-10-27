@@ -15,6 +15,7 @@
 	if(user == null)
 	{
 		response.sendRedirect("Login.jsp");
+		return;
 	}
 %>
 <div class="layui-layout layui-layout-admin">

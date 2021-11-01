@@ -20,6 +20,7 @@ public class UpdateUserInfo extends HttpServlet {
 		HttpSession session = request.getSession();
 		User user=(User) session.getAttribute("user");
 		user.setFirstName(request.getParameter("firstName"));
+		user.setPassword(request.getParameter("password"));
 		user.setLastName(request.getParameter("lastName"));
 		user.setPhone(request.getParameter("phone"));
 		user.setAddress(request.getParameter("address"));
@@ -27,7 +28,7 @@ public class UpdateUserInfo extends HttpServlet {
 		UserDao userDao = new UserDao();
         userDao.updateInfo(user);
         session.setAttribute("user", user);
-        request.getRequestDispatcher("updateInfo.jsp").forward(request,response);
+        request.getRequestDispatcher("main.jsp").forward(request,response);
 	}
 
 

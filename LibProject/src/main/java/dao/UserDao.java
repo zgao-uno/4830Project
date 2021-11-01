@@ -65,14 +65,15 @@ public class UserDao {
 		PreparedStatement ps = null;
 		try {
 			con = DButil.getConn();
-			String sql = "update user set firstname=?, lastname=?, phone=?, address=? where email=? and password=?";
+			String sql = "update user set firstname=?, lastname=?, password=?, phone=?, address=? where email=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1,user.getFirstName());
 			ps.setString(2,user.getLastName());
-			ps.setString(3,user.getPhone());
-			ps.setString(4,user.getAddress());
-			ps.setString(5,user.getEmail());
-			ps.setString(6,user.getPassword());
+			ps.setString(3,user.getPassword());
+			ps.setString(4,user.getPhone());
+			ps.setString(5,user.getAddress());
+			ps.setString(6,user.getEmail());
+			
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

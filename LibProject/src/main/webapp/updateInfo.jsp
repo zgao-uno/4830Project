@@ -14,7 +14,7 @@
 	User user=(User)session.getAttribute("user");
 	if(user == null)
 	{
-		response.sendRedirect("Login.jsp");
+		response.sendRedirect("login.jsp");
 		return;
 	}
 %>
@@ -45,12 +45,14 @@
 				<h2 class="header">Update Your Information</h2>
 			</div>
 			<div class="layui-form-item">
-				<label class="layui-form-label">Email:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<label class="layui-form-label">Email&nbsp;&nbsp;&nbsp;&nbsp;</label>
 				<label class="layui-form-label"><%=user.getEmail() %></label>
         	</div>
         	<div class="layui-form-item">
-        		<label class="layui-form-label">Password:&nbsp;&nbsp;&nbsp;&nbsp;</label>
-            	<label class="layui-form-label"><%=user.getPassword() %></label>
+				<label class="layui-form-label">Password</label>
+            	<div class="layui-input-block">
+          			<input type="text" name="password" required value="<%=user.getPassword() %>" autocomplete="off" class="layui-input">
+            	</div>
         	</div>
         	<div class="layui-form-item">
 				<label class="layui-form-label">First Name</label>

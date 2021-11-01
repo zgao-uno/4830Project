@@ -9,12 +9,11 @@
 <link rel="stylesheet" href="style/layui/css/layui.css">
 <link rel="stylesheet" href="style/css/main.css">
 </head>
-<body>
 <%
 	User user=(User)session.getAttribute("user");
 	if(user == null)
 	{
-		response.sendRedirect("Login.jsp");
+		response.sendRedirect("login.jsp");
 		return;
 	}
 %>

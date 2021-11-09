@@ -25,7 +25,6 @@
 			 <li class="layui-nav-item layui-hide-xs"><a href="bookSearch.jsp">Book Search</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="DisplayBook.jsp">See All Books</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="">Checkout History</a></li>
-			 <li class="layui-nav-item layui-hide-xs"><a href="feedback.jsp">Giving Feedback</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="SubmitReview.jsp">Submit A Review</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="reviewboard.jsp">Review Board</a></li>
 		</ul>>
@@ -36,6 +35,7 @@
         		</a>
         		<dl class="layui-nav-child">
          			<dd><a href="updateInfo.jsp">Your Profile</a></dd>
+          			<dd><a href="feedback.jsp">Giving Feedback</a></dd>
           			<dd><a href="Logout">Sign out</a></dd>
         		</dl>
       		</li>

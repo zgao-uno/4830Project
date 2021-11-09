@@ -26,6 +26,8 @@
 			 <li class="layui-nav-item layui-hide-xs"><a href="DisplayBook.jsp">See All Books</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="">Checkout History</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="feedback.jsp">Giving Feedback</a></li>
+			 <li class="layui-nav-item layui-hide-xs"><a href="SubmitReview.jsp">Submit A Review</a></li>
+			 <li class="layui-nav-item layui-hide-xs"><a href="reviewboard.jsp">Review Board</a></li>
 		</ul>>
 		<ul class="layui-nav layui-layout-right">
       		<li class="layui-nav-item layui-hide layui-show-md-inline-block">

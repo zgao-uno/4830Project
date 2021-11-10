@@ -24,6 +24,7 @@
 			 <li class="layui-nav-item layui-hide-xs"><a href="main.jsp">Main Page</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="bookSearch.jsp">Book Search</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="">Checkout History</a></li>
+			 <li class="layui-nav-item layui-hide-xs"><a href="SubmitReview.jsp">Submit A Review</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="reviewboard.jsp">Review Board</a></li>
 		</ul>>
 		<ul class="layui-nav layui-layout-right">

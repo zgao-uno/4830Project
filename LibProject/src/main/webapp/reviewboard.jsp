@@ -78,7 +78,7 @@
 		<form method="get" action="SubmitReview.jsp">
 			<div class="layui-form-item">
         		<div class="layui-input-block">
-        			<button type="submit" class="layui-btn">Write a Review</button>         
+        			<button type="submit" class="layui-btn">Write a Review!</button>         
         		</div>
         	</div>
         </form>

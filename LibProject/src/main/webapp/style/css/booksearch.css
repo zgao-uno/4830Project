@@ -1,5 +1,5 @@
 .container{
-	width: 500px;
+	width: 700px;
     height: 200px;
     min-height: 320px;  
     max-height: 350px;  
@@ -41,6 +41,13 @@ table.test {
 	margin-left: -50px;
 	border-radius: 5px;
 	width: 350px;
+	height: 40px;
+	font-size: 15px;
+}
+.layui-btn1{
+	margin-left: -50px;
+	border-radius: 5px;
+	width: 150px;
 	height: 40px;
 	font-size: 15px;
 }

@@ -6,6 +6,8 @@
 <%@ page import="java.util.List" %>
 <%@page import="dao.BookDao" %>
 <%@ page import="java.util.Iterator" %>
+<%@ page import="model.Check" %>
+<%@ page import="ListObjects.AllChecks" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +26,9 @@
 	}
 	
 	AllBooks all = new AllBooks();
+	AllChecks a1 = new AllChecks();
 	List<Book> book = all.loadAll();
+	List<Check> check = a1.loadAllChecks(user.getEmail());
 	
 %>
 <div class="layui-layout layui-layout-admin">
@@ -51,53 +55,38 @@
     	</ul>
 	</div>
 	
-	<form class="layui-form" action="BookSearch" method="post">
-		<div class="container">
-			<div class="layui-form-item layui-form-text">
-    			<h2 class="header">Enter Book Name:</h2><br>
-    			<textarea class="layui-textarea" name="booksearch"></textarea><br>
-  			</div>
-			<div class="layui-form-item">
-        		<div class="layui-input-block">
-        			<button type="submit" class="layui-btn">Submit</button>         
-        		</div>
-        	</div>
-		</div>
-		</form>
-	<form class="layui-form" action="Checkout" method="post">	
+	
 		<div style="height:100px;overflow:auto;" class="container">
-		<h2 class="header">All Books:</h2><br>
+		<h2 class="header">Checked Out Books:</h2><br>
 		<table class="test">
 			
-			<tr><th>Book Name</th><th>Author</th><th>Pages</th><th>Genre</th><th>Checkout</th></tr>
+			<tr><th>Book Name</th><th>Author</th><th>Pages</th><th>Genre</th></tr>
 			<%
-			Iterator<Book> itr = book.iterator();
+			Iterator<Check> itr = check.iterator();
 			
 			while(itr.hasNext())
 			{
 				
-				Book b = itr.next();
-				%>
-				<tr><td><%=b.getName() %></td>
-					<td><%=b.getAuth() %></td>
-					<td><%=b.getPages() %></td>
-					<td><%=b.getGenre() %></td>
-					<td>
-						<div class="layui-form-item">
-	        				<div class="layui-input-block">
-	        					<input type="hidden" name="email" value=<%=user.getEmail() %>>
-	        					<input type="hidden" name="id" value=<%=b.getID() %>>
-	        					<button type="submit" class="layui-btn1">Submit</button>         
-	        				</div>
-	        			</div>
-					</td>
-				</tr>
-				<%
+				Check c = itr.next();
+				for(int i=0; i < book.size();i++)
+				{
+					if(book.get(i).getID() == c.getBookID())
+					{
+						%>
+						<tr><td><%=book.get(i).getName() %></td>
+							<td><%=book.get(i).getAuth() %></td>
+							<td><%=book.get(i).getPages() %></td>
+							<td><%=book.get(i).getGenre() %></td>
+						
+						</tr>
+						<%
+					}
+				}
 			}
 			%>
 		</table>
 	</div>
-	</form>
+	
 
 	
 	

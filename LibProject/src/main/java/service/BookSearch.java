@@ -22,6 +22,10 @@ public class BookSearch extends HttpServlet {
 		String booksearch = request.getParameter("booksearch");
 		BookDao book = new BookDao();
 		Book b = book.getBook(booksearch);
+		if(b != null)
+		{
+			
+		
 		String name = b.getName();
 		String auth = b.getAuth();
 		int pages = b.getPages();
@@ -110,7 +114,11 @@ public class BookSearch extends HttpServlet {
 				+ "				</tr>\r\n"
 				+ "		</table>\r\n"
 				+ "	</div>");
-		
+		}
+		else
+		{
+			response.sendRedirect("bookSearch.jsp");
+		}
 		
 		
 		

@@ -1,14 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="model.User"%>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="model.Book" %>
+<%@ page import="java.util.List" %>
+
+<%@ page import="ListObjects.AllBooks" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Library</title>
+<title>Book Search Results</title>
 <link rel="stylesheet" href="style/layui/css/layui.css">
-<link rel="stylesheet" href="style/css/main.css">
+<link rel="stylesheet" href="style/css/displaybooks.css">
 </head>
+<body>
 <%
 	User user=(User)session.getAttribute("user");
 	if(user == null)
@@ -16,6 +23,10 @@
 		response.sendRedirect("login.jsp");
 		return;
 	}
+	
+	AllBooks all = new AllBooks();
+	List<Book> book = all.loadAll();
+	
 %>
 <div class="layui-layout layui-layout-admin">
 	<div class="layui-header">
@@ -35,14 +46,35 @@
         		</a>
         		<dl class="layui-nav-child">
          			<dd><a href="updateInfo.jsp">Your Profile</a></dd>
-          			<dd><a href="feedback.jsp">Giving Feedback</a></dd>
+         			<dd><a href="feedback.jsp">Giving Feedback</a></dd>
           			<dd><a href="Logout">Sign out</a></dd>
         		</dl>
       		</li>
     	</ul>
 	</div>
-	<div class="container"><br><br><br>
-		<h1>Hi&nbsp;<%=user.getFirstName() %>, Welcome to the online library</h1>
+	
+
+	<div style="height:100px;overflow:auto;" class="container">
+		<table class="test">
+			
+			<tr><th>Book Name</th><th>Author</th><th>Pages</th><th>Genre</th></tr>
+			<%
+			Iterator<Book> itr = book.iterator();
+			
+			while(itr.hasNext())
+			{
+				
+				Book b = itr.next();
+				%>
+				<tr><td><%=b.getName() %></td>
+					<td><%=b.getAuth() %></td>
+					<td><%=b.getPages() %></td>
+					<td><%=b.getGenre() %></td>
+				</tr>
+				<%
+			}
+			%>
+		</table>
 	</div>
 </div>
 <script src="style/layui/layui.js"></script>

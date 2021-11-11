@@ -38,8 +38,8 @@
 			 <li class="layui-nav-item layui-hide-xs"><a href="main.jsp">Main Page</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="bookSearch.jsp">Book Search</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="Checkout.jsp">Checkout History</a></li>
-			 <li class="layui-nav-item layui-hide-xs"><a href="SubmitReview.jsp">Submit A Review</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="reviewboard.jsp">Review Board</a></li>
+			 <li class="layui-nav-item layui-hide-xs"><a href="checkin.jsp">Check-in</a></li>
 		</ul>>
 		<ul class="layui-nav layui-layout-right">
       		<li class="layui-nav-item layui-hide layui-show-md-inline-block">
@@ -60,7 +60,7 @@
 		<h2 class="header">Checked Out Books:</h2><br>
 		<table class="test">
 			
-			<tr><th>Book Name</th><th>Author</th><th>Pages</th><th>Genre</th></tr>
+			<tr><th>Book Name</th><th>Author</th><th>Pages</th><th>Genre</th><th>Currently Checked Out</th></tr>
 			<%
 			Iterator<Check> itr = check.iterator();
 			
@@ -77,6 +77,21 @@
 							<td><%=book.get(i).getAuth() %></td>
 							<td><%=book.get(i).getPages() %></td>
 							<td><%=book.get(i).getGenre() %></td>
+							<% 
+								int chek = c.currently();
+								if (chek == 1)
+								{
+									%>
+									<td><%="No" %></td>
+									<% 
+								}
+								else
+								{
+									%>
+									<td><%="Yes" %></td>
+									<% 
+								}
+							%> 
 						
 						</tr>
 						<%

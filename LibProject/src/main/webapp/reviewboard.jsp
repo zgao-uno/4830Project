@@ -35,8 +35,8 @@
 			 <li class="layui-nav-item layui-hide-xs"><a href="main.jsp">Main Page</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="bookSearch.jsp">Book Search</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="Checkout.jsp">Checkout History</a></li>
-			 <li class="layui-nav-item layui-hide-xs"><a href="SubmitReview.jsp">Submit A Review</a></li>
 			 <li class="layui-nav-item layui-hide-xs"><a href="reviewboard.jsp">Review Board</a></li>
+			 <li class="layui-nav-item layui-hide-xs"><a href="checkin.jsp">Check-in</a></li>
 		</ul>>
 		<ul class="layui-nav layui-layout-right">
       		<li class="layui-nav-item layui-hide layui-show-md-inline-block">
@@ -54,6 +54,7 @@
 	
 
 	<div style="height:100px;overflow:auto;" class="container">
+	<h2 class="header">Review Board</h2><br>
 		<table class="test">
 			
 			<%
@@ -73,9 +74,20 @@
 				</tr>
 				<%
 				
+				
+				
+				
+	        
 			}
 			%>
 		</table>
+		<form method="get" action="SubmitReview.jsp">
+			<div class="layui-form-item">
+        		<div class="layui-input-block">
+        			<button type="submit" class="layui-btn">Write a Review</button>         
+        		</div>
+        	</div>
+        </form>
 	</div>
 </div>
 <script src="style/layui/layui.js"></script>

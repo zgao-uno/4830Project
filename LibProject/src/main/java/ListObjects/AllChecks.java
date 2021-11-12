@@ -28,16 +28,17 @@ public class AllChecks
 	
 		try {
 			con = DButilNick.getConn();
-			String sql = "select id from checkout where email=?";
+			String sql = "select * from checkout where email=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, email);
 			
 			rs = ps.executeQuery();
 			while(rs.next()){
                check = new Check();
+               check.setEmail(rs.getString("email")); 
                check.setBookID(rs.getInt("id"));
-               check.setEmail(email);
-               check.setCurrently(0);
+              
+               check.setCurrently(rs.getInt("currently"));
                allchecks.add(check);
             }
 			

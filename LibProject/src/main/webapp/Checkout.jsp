@@ -77,9 +77,10 @@
 							<td><%=book.get(i).getAuth() %></td>
 							<td><%=book.get(i).getPages() %></td>
 							<td><%=book.get(i).getGenre() %></td>
+							
 							<% 
 								int chek = c.currently();
-								if (chek == 1)
+								if (chek == 0)
 								{
 									%>
 									<td><%="No" %></td>

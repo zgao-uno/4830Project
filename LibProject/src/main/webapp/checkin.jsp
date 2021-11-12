@@ -64,7 +64,7 @@
 	{
 		Check c = itr.next();
 		
-		if(c.currently() == 0)
+		if(c.currently() != 0)
 		{
 			for (int i = 0; i < books.size();i++)
 			{
@@ -76,7 +76,7 @@
 	        				<div class="layui-input-block">
 	        					
 	        					<input type="hidden" name="email" value=<%=user.getEmail() %>>
-	        					<input type="hidden" name="id" value=<%=books.get(i).getID() %>>
+	        					<input type="hidden" name="id" value=<%=c.getBookID() %>>
 	        					<label for="book"><%=books.get(i).getName()%></label>
 	        					<button type="submit" class="layui-btn1">Check-in</button>           
 	        				</div>

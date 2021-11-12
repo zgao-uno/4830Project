@@ -14,11 +14,15 @@ public class CheckinDao {
 		
 		try {
 			con = DButilNick.getConn();
-			String sql = "update checkout set currently = 1 where Id = ? ";
+		
+			String sql = "update checkout set currently = 0 where id = ? ";
+			
+			
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, id);
 			
-			ps.executeUpdate();
+			
+			ps.execute();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

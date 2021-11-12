@@ -35,7 +35,7 @@ User user=(User)session.getAttribute("user");
         		</a>
         		<dl class="layui-nav-child">
          			<dd><a href="updateInfo.jsp">Your Profile</a></dd>
-         			<dd><a href="feedback.jsp">Giving Feedback</a></dd>
+         			<dd><a href="feedback.jsp">Feedback</a></dd>
           			<dd><a href="Logout">Sign out</a></dd>
         		</dl>
       		</li>

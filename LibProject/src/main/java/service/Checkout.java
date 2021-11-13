@@ -17,11 +17,10 @@ public class Checkout extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String email = request.getParameter("email");
-		String id = request.getParameter("id");
-		int id1 = Integer.parseInt(id);
-		
+		int id = Integer.parseInt(request.getParameter("id3"));
+	
 		CheckDao d = new CheckDao();
-		d.addCheckOut(email, id1, 1);
+		d.addCheckOut(email, id, 1);
 		
 		request.getRequestDispatcher("bookSearch.jsp").forward(request,response);
 	}

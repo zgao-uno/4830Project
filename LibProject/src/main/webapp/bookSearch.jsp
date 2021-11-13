@@ -55,7 +55,7 @@
 		<div class="container">
 			<div class="layui-form-item layui-form-text">
     			<h2 class="header">Enter Book Name:</h2><br>
-    			<input type="search" class="layui-textarea" name="booksearch"></input><br>
+    			<textarea class="layui-textarea" name="booksearch"></textarea><br>
   			</div>
 			<div class="layui-form-item">
         		<div class="layui-input-block">
@@ -77,35 +77,27 @@
 			{
 				
 				Book b = itr.next();
-				int i =0;
-				 i++;
 				%>
-			
 				<tr><td><%=b.getName() %></td>
 					<td><%=b.getAuth() %></td>
 					<td><%=b.getPages() %></td>
 					<td><%=b.getGenre() %></td>
-					<td><%=b.getID() %></td>
-					
 					<td>
-					<form class="layui-form" action="Checkout" method="post">
 						<div class="layui-form-item">
 	        				<div class="layui-input-block">
 	        					<input type="hidden" name="email" value=<%=user.getEmail() %>>
-	        					<input type="hidden" name="id3" value=<%=b.getID() %>>
+	        					<input type="hidden" name="id" value=<%=b.getID() %>>
 	        					<button type="submit" class="layui-btn1">Submit</button>         
 	        				</div>
 	        			</div>
-	        		</form>
 					</td>
-					
 				</tr>
 				<%
 			}
 			%>
 		</table>
 	</div>
-	
+	</form>
 
 	
 	

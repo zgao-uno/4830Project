@@ -17,11 +17,10 @@ public class Checkin extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String email = request.getParameter("email");
-		String id = request.getParameter("id");
-		int id1 = Integer.parseInt(id);
+		int id = Integer.parseInt(request.getParameter("id"));
 		
 		CheckinDao a = new CheckinDao();
-		a.checkin(email, id1);
+		a.checkin(email, id);
 		
 		request.getRequestDispatcher("Checkout.jsp").forward(request,response);
 	}

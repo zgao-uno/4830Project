@@ -63,15 +63,17 @@
 	while(itr.hasNext())
 	{
 		Check c = itr.next();
-		
+
 		if(c.currently() != 0)
 		{
 			for (int i = 0; i < books.size();i++)
 			{
 				if(books.get(i).getID() == c.getBookID())
 				{
+					String id = "id";
 					%>
 					
+					<form class="layui-form" action="Checkin" method="post">
 					<div class="layui-form-item">
 	        				<div class="layui-input-block">
 	        					
@@ -81,8 +83,9 @@
 	        					<button type="submit" class="layui-btn1">Check-in</button>           
 	        				</div>
 	        			</div>
-	        			
+	        			</form>
 					<% 
+				;
 				}
 			}
 		}

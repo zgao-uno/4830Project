@@ -51,7 +51,7 @@ public class TestGao {
   @Test
   public void testProfile() throws Exception {
 	doLogin();
-    driver.get("http://ec2-3-22-249-161.us-east-2.compute.amazonaws.com:8080/LibProject/main.jsp");
+    driver.findElement(By.xpath("//ul[2]/li/a")).click();
     driver.findElement(By.linkText("Your Profile")).click();
     driver.findElement(By.name("firstName")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Password'])[1]/following::div[2]")).click();
@@ -69,7 +69,7 @@ public class TestGao {
   @Test
   public void testFeedback() throws Exception {
 	doLogin();
-    driver.get("http://ec2-3-22-249-161.us-east-2.compute.amazonaws.com:8080/LibProject/main.jsp");
+    driver.findElement(By.xpath("//ul[2]/li/a")).click();
     driver.findElement(By.linkText("Feedback")).click();
     driver.findElement(By.name("feedback")).click();
     driver.findElement(By.name("feedback")).clear();
@@ -80,8 +80,10 @@ public class TestGao {
   @Test
   public void testLogout() throws Exception {
 	doLogin();
-    driver.get("http://ec2-3-22-249-161.us-east-2.compute.amazonaws.com:8080/LibProject/main.jsp");
+	driver.findElement(By.xpath("//ul[2]/li/a")).click();
     driver.findElement(By.linkText("Sign out")).click();
+    driver.get("http://ec2-3-22-249-161.us-east-2.compute.amazonaws.com:8080/LibProject/main.jsp");
+    driver.get("http://ec2-3-22-249-161.us-east-2.compute.amazonaws.com:8080/LibProject/updateInfo.jsp");
   }
 
   @After

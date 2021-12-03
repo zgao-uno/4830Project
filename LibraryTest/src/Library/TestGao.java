@@ -85,6 +85,32 @@ public class TestGao {
     driver.get("http://ec2-3-22-249-161.us-east-2.compute.amazonaws.com:8080/LibProject/main.jsp");
     driver.get("http://ec2-3-22-249-161.us-east-2.compute.amazonaws.com:8080/LibProject/updateInfo.jsp");
   }
+  
+  @Test
+  public void testBookSearch() throws Exception
+  {
+	  doLogin();
+	  driver.findElement(By.xpath("//ul[1]/li/a")).click();
+	  driver.findElement(By.linkText("Book Search")).click();
+	  driver.findElement(By.name("booksearch")).click();
+	  driver.findElement(By.name("booksearch")).clear();
+	 
+	  driver.findElement(By.name("booksearch")).sendKeys("Harry Potter");
+	
+	  driver.findElement(By.xpath("//button[@type='submit'][@class='layui-btn']")).click();
+	  
+
+  }
+  @Test
+  public void testCheckout() throws Exception
+  {
+	  doLogin();
+	  driver.findElement(By.xpath("//ul[1]/li/a")).click();
+	  driver.findElement(By.linkText("Book Search")).click();
+	  
+	
+	  driver.findElement(By.xpath("//button[@type='submit'][@class='layui-btn1']")).click();
+  }
 
   @After
   public void tearDown() throws Exception {

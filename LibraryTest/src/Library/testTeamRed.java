@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import java.io.File;
 
-public class TestGao {
+public class testTeamRed {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -97,7 +97,7 @@ public class TestGao {
 	 
 	  driver.findElement(By.name("booksearch")).sendKeys("Harry Potter");
 	
-	  driver.findElement(By.xpath("//button[@type='submit'][@class='layui-btn']")).click();
+	  driver.findElement(By.xpath("//button[@type='submit']")).click();
 	  
 
   }
@@ -109,7 +109,8 @@ public class TestGao {
 	  driver.findElement(By.linkText("Book Search")).click();
 	  
 	
-	  driver.findElement(By.xpath("//button[@type='submit'][@class='layui-btn1']")).click();
+	  driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='fiction'])[2]/following::button[1]")).click();
+	  driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='fiction'])[3]/following::button[1]")).click();
   }
 
   @After

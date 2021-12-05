@@ -96,9 +96,9 @@ public class testTeamRed {
 	  driver.findElement(By.name("booksearch")).clear();
 	 
 	  driver.findElement(By.name("booksearch")).sendKeys("Harry Potter");
-	
-	  driver.findElement(By.xpath("//button[@type='submit']")).click();
 	  
+	  driver.findElement(By.xpath("//button[@type='submit']")).click();
+	  driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Genre'])[1]/following::td[1]"));
 
   }
   @Test

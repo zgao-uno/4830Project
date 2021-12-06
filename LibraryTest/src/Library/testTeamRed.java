@@ -101,6 +101,21 @@ public class testTeamRed {
 	  driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Genre'])[1]/following::td[1]"));
 
   }
+  
+  @Test
+  public void testEmptyBookSearch() throws Exception 
+  {
+	  doLogin();
+	  driver.findElement(By.xpath("//ul[1]/li/a")).click();
+	  driver.findElement(By.linkText("Book Search")).click();
+	  driver.findElement(By.name("booksearch")).click();
+	  driver.findElement(By.name("booksearch")).clear();
+	 
+	  driver.findElement(By.name("booksearch")).sendKeys("");
+	  
+	  driver.findElement(By.xpath("//button[@type='submit']")).click();
+  }
+  
   @Test
   public void testCheckout() throws Exception
   {
@@ -111,6 +126,17 @@ public class testTeamRed {
 	
 	  driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='fiction'])[2]/following::button[1]")).click();
 	  driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='fiction'])[3]/following::button[1]")).click();
+  }
+  
+  @Test
+  public void testCheckoutHistory() throws Exception
+  {
+	  doLogin();
+	  
+	  driver.findElement(By.xpath("//ul[1]/li/a")).click();
+	  driver.findElement(By.linkText("Checkout History")).click();
+	  
+	  isElementPresent(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='fiction'])[10]/following::td[1]"));
   }
 
   @After

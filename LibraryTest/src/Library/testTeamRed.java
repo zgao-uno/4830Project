@@ -26,6 +26,74 @@ public class testTeamRed {
   }
 
   @Test
+  public void testSubmitReview() throws Exception {
+	  driver.get("http://ec2-3-22-249-161.us-east-2.compute.amazonaws.com:8080/LibProject/login.jsp");
+    driver.findElement(By.name("email")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.name("email")).clear();
+    driver.findElement(By.name("email")).sendKeys("3");
+    driver.findElement(By.name("password")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.name("password")).clear();
+    driver.findElement(By.name("password")).sendKeys("3");
+    driver.findElement(By.xpath("//button[@type='submit']")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.linkText("Review Board")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.xpath("//button[@type='submit']")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.name("title")).click();
+    driver.findElement(By.name("title")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.name("title")).clear();
+    driver.findElement(By.name("title")).sendKeys("Of Mice and Men");
+    Thread.sleep(1500);
+    driver.findElement(By.name("author")).clear();
+    driver.findElement(By.name("author")).sendKeys("John Steinbeck");
+    Thread.sleep(1500);
+    driver.findElement(By.name("rate")).clear();
+    driver.findElement(By.name("rate")).sendKeys("5");
+    Thread.sleep(1500);
+    driver.findElement(By.name("summary")).clear();
+    driver.findElement(By.name("summary")).sendKeys("This is an excellent book!");
+    Thread.sleep(1500);
+    driver.findElement(By.xpath("//button[@type='submit']")).click();
+  }
+  
+  @Test
+  public void testCheckIn() throws Exception {
+    driver.get("http://ec2-3-22-249-161.us-east-2.compute.amazonaws.com:8080/LibProject/login.jsp");
+    driver.findElement(By.name("email")).click();
+    driver.findElement(By.name("email")).clear();
+    Thread.sleep(1500);
+    driver.findElement(By.name("email")).sendKeys("3");
+    driver.findElement(By.name("password")).click();
+    driver.findElement(By.name("password")).clear();
+    Thread.sleep(1500);
+    driver.findElement(By.name("password")).sendKeys("3");
+    Thread.sleep(1500);
+    driver.findElement(By.xpath("//button[@type='submit']")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.linkText("Book Search")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='fiction'])[2]/following::button[1]")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.linkText("Check-in")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.xpath("//button[@type='submit']")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.linkText("Book Search")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='fiction'])[4]/following::button[1]")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.linkText("Checkout History")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.linkText("Check-in")).click();
+    Thread.sleep(1500);
+    driver.findElement(By.xpath("//button[@type='submit']")).click();
+  }
+  
+  @Test
   public void testLogin() throws Exception {
     driver.get("http://ec2-3-22-249-161.us-east-2.compute.amazonaws.com:8080/LibProject/login.jsp");
     driver.findElement(By.name("email")).click();
